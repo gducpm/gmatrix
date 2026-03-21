@@ -27,8 +27,18 @@ jobs:
       if: runner.os == 'Windows'
       run: vcpkg install pdcurses:x64-windows
 
-    - name: Configure CMake
+    - name: Configure CMake (Unix)
+      if: runner.os != 'Windows'
       run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+    - name: Configure CMake (Windows)
+      if: runner.os == 'Windows'
+      shell: pwsh
+      run: >
+        cmake -B build 
+        -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+        -DVCPKG_TARGET_TRIPLET=x64-windows
+        -DCMAKE_BUILD_TYPE=Release
 
     - name: Build
       run: cmake --build build --config Release
