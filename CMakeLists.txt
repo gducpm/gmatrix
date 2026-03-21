@@ -3,8 +3,6 @@ project(gmatrix VERSION 1.0.0 LANGUAGES C)
 
 configure_file("${PROJECT_SOURCE_DIR}/src/version.h.in" "${PROJECT_BINARY_DIR}/generated/version.h")
 
-add_executable(gmatrix src/main.c src/opts.c src/program_info.c src/buffer_ops.c src/matrix_frame.c src/def.h)
-
 target_include_directories(gmatrix PRIVATE "${PROJECT_BINARY_DIR}/generated")
 
 if(WIN32)
