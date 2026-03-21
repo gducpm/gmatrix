@@ -45,7 +45,7 @@ extern int cols;
 extern int frame;
 extern int *col_update;
 extern int *col_cooldown;
-extern bool pause;
+extern bool paused;
 
 void parse_opts(int argc, char *argv[]);
 void print_help(char *program_name);

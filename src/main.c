@@ -8,7 +8,7 @@ int frame = 0;
 int *col_update;
 int *col_cooldown;
 int rows, cols;
-bool pause = false;
+bool paused = false;
 
 int main(int argc, char *argv[]) {
 	parse_opts(argc, argv);
@@ -29,9 +29,9 @@ int main(int argc, char *argv[]) {
 		int press = getch();
 
 		if (press == (int)'q') break;
-		if (press == (int)'p') pause = !pause;
+		if (press == (int)'p') paused = !paused;
 
-		if (!pause) {
+		if (!paused) {
 			frame++;
 
 			for (int c = 0; c < cols; c++) {
