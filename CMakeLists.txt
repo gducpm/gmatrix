@@ -8,14 +8,17 @@ add_executable(gmatrix src/main.c src/opts.c src/program_info.c src/buffer_ops.c
 target_include_directories(gmatrix PRIVATE "${PROJECT_BINARY_DIR}/generated")
 
 if(WIN32)
-    find_package(Curses REQUIRED) 
-    target_link_libraries(gmatrix PRIVATE ${CURSES_LIBRARIES})
-    target_include_directories(gmatrix PRIVATE ${CURSES_INCLUDE_DIRS})
-    target_compile_options(gmatrix PRIVATE /W4 /WX /O2 /wd4996) 
+    find_package(unofficial-pdcurses CONFIG REQUIRED)
+    add_executable(gmatrix src/main.c src/opts.c src/program_info.c src/buffer_ops.c src/matrix_frame.c src/def.h)
+    target_link_libraries(gmatrix PRIVATE unofficial::pdcurses::pdcurses)
+    target_include_directories(gmatrix PRIVATE "${PROJECT_BINARY_DIR}/generated")
+    target_compile_options(gmatrix PRIVATE /W4 /WX /O2 /wd4996)
 else()
     find_package(Curses REQUIRED)
+    add_executable(gmatrix src/main.c src/opts.c src/program_info.c src/buffer_ops.c src/matrix_frame.c src/def.h)
     target_link_libraries(gmatrix PRIVATE ${CURSES_LIBRARIES})
-    target_include_directories(gmatrix PRIVATE ${CURSES_INCLUDE_DIRS})
+    target_include_directories(gmatrix PRIVATE "${PROJECT_BINARY_DIR}/generated" "${CURSES_INCLUDE_DIR}")
+    
     target_compile_options(gmatrix PRIVATE -O3 -Wall -Wextra -Wshadow -Wconversion -Wpedantic -Werror)
 endif()
 
