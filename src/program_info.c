@@ -36,7 +36,7 @@ void print_help(char *program_name) {
 	program_name);
 }
 
-void print_version() {
+void print_version(void) {
 	printf("GMatrix " VERSION " by GDucpm\n\n" // Replaced by macro
 		"Contributors:\n"
 		"none\n"
