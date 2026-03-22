@@ -25,7 +25,7 @@ jobs:
 
     - name: Install Dependencies (Windows)
       if: runner.os == 'Windows'
-      run: vcpkg install pdcurses:x64-windows
+      run: vcpkg install pdcurses:x64-windows getopt-win32:x64-windows
 
     - name: Configure CMake (Unix)
       if: runner.os != 'Windows'
