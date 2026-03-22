@@ -26,7 +26,9 @@ jobs:
 
       - name: Dependencies (Windows)
         if: runner.os == 'Windows'
-        run: vcpkg install pdcurses:x64-windows getopt-win32:x64-windows
+        run: |
+          choco install nsis -y
+          vcpkg install pdcurses:x64-windows getopt-win32:x64-windows
 
       - name: Rename License for MacOS # why must you do that to me, Tim
         if: runner.os == 'MacOS'
