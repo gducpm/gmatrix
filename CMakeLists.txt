@@ -7,6 +7,8 @@ add_executable(gmatrix src/main.c src/opts.c src/program_info.c src/buffer_ops.c
 
 set(CPACK_PACKAGE_NAME "GMatrix")
 set(CPACK_PACKAGE_VENDOR "GDucpm")
+set(CPACK_PACKAGE_CONTACT "GDucpm <gducpm@gmail.com>")
+set(CPACK_PACKAGE_IDENTIFIER "com.gducpm.gmatrix")
 set(CPACK_RESOURCE_FILE_LICENSE "${PROJECT_SOURCE_DIR}/LICENSE")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "A fast and lightweight terminal entertainment program for Matrix rain")
 
@@ -23,13 +25,19 @@ else()
 	target_compile_options(gmatrix PRIVATE -O3 -Wall -Wextra -Wshadow -Wconversion -Wpedantic -Werror)
 endif()
 
-# Only for MacOS
 if(WIN32)
 	set(CPACK_GENERATOR "NSIS64;ZIP")
+	set(CPACK_NSIS_DISPLAY_NAME "GMatrix")
+	set(CPACK_NSIS_PACKAGE_NAME "GMatrix")
+	set(CPACK_NSIS_MODIFY_PATH ON)
 elseif(APPLE)
 	set(CPACK_GENERATOR "pkgbuild;DragNDrop")
 else()
 	set(CPACK_GENERATOR "DEB;RPM;TGZ;TXZ;TZST")
+	set(CPACK_DEBIAN_PACKAGE_MAINTAINER "GDucpm")
+	set(CPACK_DEBIAN_PACKAGE_SECTION "games")
+	set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
+	set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE ${CMAKE_SYSTEM_PROCESSOR})
 endif()
 
 include(CPack)
