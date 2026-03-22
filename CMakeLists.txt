@@ -7,9 +7,9 @@ add_executable(gmatrix src/main.c src/opts.c src/program_info.c src/buffer_ops.c
 
 if(WIN32)
     find_package(unofficial-pdcurses CONFIG REQUIRED)
-    find_package(getopt-win32 CONFIG REQUIRED)
+    find_package(getopt CONFIG REQUIRED)
     target_link_libraries(gmatrix PRIVATE unofficial::pdcurses::pdcurses)
-    target_link_libraries(gmatrix PRIVATE getopt-win32::getopt)
+    target_link_libraries(gmatrix PRIVATE getopt::getopt)
     target_include_directories(gmatrix PRIVATE "${PROJECT_BINARY_DIR}/generated")
     target_compile_options(gmatrix PRIVATE /W4 /WX /O2 /wd4996)
 else()
