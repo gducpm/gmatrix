@@ -1,7 +1,9 @@
 # GMatrix  
+![Test](https://github.com/gducpm/gmatrix/actions/workflows/test.yml/badge.svg)![Release](https://github.com/gducpm/gmatrix/actions/workflows/release.yml/badge.svg)![Platform](https://img.shields.io/badge/platform-GNU+Linux | macOS | Windows-brightgreen)![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)![Repo Size](https://img.shields.io/github/repo-size/gducpm/gmatrix)
 A fast and lightweight terminal entertainment program for Matrix rain  
 ![GMatrix](./.github/assets/gmatrix_preview.png)
 ## General Info  
+**Platforms**: GNU+Linux, Windows, MacOS
 **Version**: 1.0.0  
 **Author**: GDucpm  
 **Contributors**: none for the time being  
@@ -10,7 +12,7 @@ A fast and lightweight terminal entertainment program for Matrix rain
 1. Go to the latest release. On GitHub, search for the Releases section on the panel on the right side  
 2. Search for executables on your platform.  
     - Windows: .msi (OFFICIAL INSTALLER), .zip (portable file)  
-    - GNU/Linux in general: .tar.xz, .tar.gz, .tar.zst (general portables)  
+    - GNU+Linux in general: .tar.xz, .tar.gz, .tar.zst (general portables)  
     - Debian-based (Debian, Ubuntu, Pop...): .deb (OFFICIAL INSTALLER)  
     - Red Hat-based (Red Hat, Fedora...): .rpm (OFFICIAL INSTALLER)  
     - MacOS: .pkg (OFFICIAL INSTALLER), .dmg  
