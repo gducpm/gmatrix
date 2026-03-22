@@ -5,16 +5,20 @@
 	#include <windows.h>
 	#include <curses.h>
 	#define XPLAT_SLEEP(ms) napms(ms)
+	#define XPLAT_MIN(a,b) (((a)<(b))?(a):(b))
+	#define XPLAT_MAX(a,b) (((a)>(b))?(a):(b))
 #else
 	#include <ncurses.h>
 	#define XPLAT_SLEEP(ms) napms(ms)
+	#include <sys/param.h>
+	#define XPLAT_MIN(a,b) MIN(a,b)
+	#define XPLAT_MAX(a,b) MAX(a,b)
 #endif
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include <signal.h>
-#include <sys/param.h>
 #include <getopt.h>
 
 #include "version.h"

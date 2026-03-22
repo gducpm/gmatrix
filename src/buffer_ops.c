@@ -49,7 +49,7 @@ void buffer_print(void) {
 			} else if (buffer[r][c].is_active) {
 				int pair_value;
 				if (no_tail_fade) pair_value = 10;
-				else pair_value = MIN(10, buffer[r][c].expiry_in);
+				else pair_value = XPLAT_MIN(10, buffer[r][c].expiry_in);
 				if (all_bold) attron(COLOR_PAIR(pair_value) | A_BOLD);
 				else attron(COLOR_PAIR(pair_value));
 				mvaddch(r, c*2, (unsigned char)buffer[r][c].val);
