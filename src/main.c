@@ -1,5 +1,4 @@
 #include "def.h"
-#include <ncurses.h>
 
 volatile sig_atomic_t resized = 0;
 
