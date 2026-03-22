@@ -57,7 +57,7 @@ jobs:
         with:
           name: gmatrix-binaries-${{ matrix.os }}
           path: |
-            build/*.msi
+            build/*.exe
             build/*.dmg
             build/*.pkg
             build/*.deb
@@ -87,8 +87,12 @@ jobs:
           files: |
             ./artifacts/*.exe
             ./artifacts/*.dmg
+            ./artifacts/*.pkg
             ./artifacts/*.deb
+            ./artifacts/*.rpm
             ./artifacts/*.tar.xz
+            ./artifacts/*.tar.gz
+            ./artifacts/*.tar.zst
             ./artifacts/*.zip
           draft: false
           prerelease: false
