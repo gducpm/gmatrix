@@ -1,5 +1,5 @@
 # GMatrix  
-![Test](https://github.com/gducpm/gmatrix/actions/workflows/test.yml/badge.svg)![Release](https://github.com/gducpm/gmatrix/actions/workflows/release.yml/badge.svg)![Platform](https://img.shields.io/badge/platform-GNU+Linux%20%7C%20macOS%20%7C%20Windows-brightgreen)![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)![Repo Size](https://img.shields.io/github/repo-size/gducpm/gmatrix)
+![Test](https://github.com/gducpm/gmatrix/actions/workflows/test.yml/badge.svg)![Release](https://github.com/gducpm/gmatrix/actions/workflows/release.yml/badge.svg)![Platform](https://img.shields.io/badge/platform-GNU+Linux%20%7C%20macOS%20%7C%20Windows-brightgreen)![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)![Repo Size](https://img.shields.io/github/repo-size/gducpm/gmatrix)  
 A fast and lightweight terminal entertainment program for Matrix rain  
 ![GMatrix](./.github/assets/gmatrix_preview.png)
 ## General Info  
