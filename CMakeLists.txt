@@ -32,4 +32,6 @@ else()
 	set(CPACK_GENERATOR "DEB;RPM;TGZ;TXZ;TZST")
 endif()
 
+include(CPack)
+
 install(TARGETS gmatrix DESTINATION bin)
