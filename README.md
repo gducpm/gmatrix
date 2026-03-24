@@ -1,9 +1,9 @@
 # GMatrix  
 ![Test](https://github.com/gducpm/gmatrix/actions/workflows/test.yml/badge.svg)![Release](https://github.com/gducpm/gmatrix/actions/workflows/release.yml/badge.svg)![Platform](https://img.shields.io/badge/platform-GNU+Linux%20%7C%20macOS%20%7C%20Windows-brightgreen)![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)![Repo Size](https://img.shields.io/github/repo-size/gducpm/gmatrix)  
 A fast and lightweight terminal entertainment program for Matrix rain  
-![GMatrix](./.github/assets/gmatrix_preview.png)
+![GMatrix](./.github/assets/gmatrix_preview.png)  
 ## General Info  
-**Platforms**: GNU+Linux, Windows, MacOS
+**Platforms**: GNU+Linux, Windows, MacOS  
 **Version**: 1.0.0  
 **Author**: GDucpm  
 **Contributors**: none for the time being  
@@ -26,7 +26,7 @@ cmake --build build --config Release
 sudo cmake --install build
 ```
 If you want to avoid running the last command as root or avoid installing to the system, use `cmake --install build --prefix ~/.local` instead.  
-## Compilation for Windows
+## Compilation for Windows  
 1. Open PowerShell in ADMINISTRATOR MODE (Unless you are installing as user)  
 2. Clone this repo  
 3. Install some dependencies using VCPKG:  
