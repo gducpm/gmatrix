@@ -3,7 +3,8 @@
 ## How to Help  
 We are currently looking for help with:  
 - **Windows Resize Support**: Converting the `SIGWINCH` logic to something `PDCurses` compatible.  
-- **Flatpak, AppImage and Snap Support**: Built in three shell scripts, also run on GitHub Actions CI/CD release job.  
+- **Flatpak, AppImage and Snap Support**: Built in three shell scripts, also run on GitHub Actions CI/CD release job.
+- **Truecolor not working on Windows**: Using printf for printing escape codes don't work.
 
 ## Contributing Rules
 1. **GPL-Licensed**: This is a 100% libre project. No proprietary dependencies.  

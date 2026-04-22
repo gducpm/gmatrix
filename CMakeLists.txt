@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(gmatrix VERSION 2.0.0 LANGUAGES C)
+project(gmatrix VERSION 2.0.1 LANGUAGES C)
 
 configure_file("${PROJECT_SOURCE_DIR}/src/version.h.in" "${PROJECT_BINARY_DIR}/generated/version.h")
 
