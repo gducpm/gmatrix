@@ -27,8 +27,8 @@ jobs:
       if: runner.os == 'Windows'
       run: vcpkg install pdcurses:x64-windows getopt-win32:x64-windows
     - name: Rename License for MacOS so that the CMakeLists still works
-        if: runner.os == 'MacOS'
-        run: cp LICENSE LICENSE.txt
+      if: runner.os == 'MacOS'
+      run: cp LICENSE LICENSE.txt
     - name: Configure CMake (Unix)
       if: runner.os != 'Windows'
       run: cmake -B build -DCMAKE_BUILD_TYPE=Release
