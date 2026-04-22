@@ -4,7 +4,7 @@ A fast and lightweight terminal entertainment program for Matrix rain
 ![GMatrix](./.github/assets/gmatrix_preview.png)  
 ## General Info  
 **Platforms**: GNU+Linux, Windows, MacOS  
-**Version**: 1.0.0  
+**Version**: 2.0.0  
 **Author**: GDucpm  
 **Contributors**: none for the time being  
 **License**: GNU General Public License 3+  
