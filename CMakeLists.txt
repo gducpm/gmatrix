@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
-project(gmatrix VERSION 1.0.0 LANGUAGES C)
+project(gmatrix VERSION 2.0.0 LANGUAGES C)
 
 configure_file("${PROJECT_SOURCE_DIR}/src/version.h.in" "${PROJECT_BINARY_DIR}/generated/version.h")
 
-add_executable(gmatrix src/main.c src/opts.c src/program_info.c src/buffer_ops.c src/matrix_frame.c src/def.h)
+add_executable(gmatrix src/main.c src/opts.c src/program_info.c src/buffer_ops.c src/matrix_frame.c src/colors.c src/def.h)
 
 set(CPACK_PACKAGE_NAME "GMatrix")
 set(CPACK_PACKAGE_VENDOR "GDucpm")
@@ -18,7 +18,19 @@ if(WIN32)
 	target_include_directories(gmatrix PRIVATE "${PROJECT_BINARY_DIR}/generated")
 	target_compile_options(gmatrix PRIVATE /W4 /WX /O2 /wd4996)
 else()
-	find_package(Curses REQUIRED)
+	set(CURSES_NEED_WIDE TRUE)
+	# Force finding the wide version
+	find_library(NCURSESW_LIBRARY NAMES ncursesw ncursesw6)
+	find_path(NCURSESW_INCLUDE_DIR NAMES ncursesw/ncurses.h)
+	
+	if(NCURSESW_LIBRARY AND NCURSESW_INCLUDE_DIR)
+		set(CURSES_LIBRARIES ${NCURSESW_LIBRARY})
+		set(CURSES_INCLUDE_DIR ${NCURSESW_INCLUDE_DIR})
+		set(CURSES_FOUND TRUE)
+	else()
+		find_package(Curses REQUIRED)
+	endif()
+	
 	target_link_libraries(gmatrix PRIVATE ${CURSES_LIBRARIES})
 	target_include_directories(gmatrix PRIVATE "${PROJECT_BINARY_DIR}/generated" "${CURSES_INCLUDE_DIR}")
 	target_compile_options(gmatrix PRIVATE -O3 -Wall -Wextra -Wshadow -Wconversion -Wpedantic -Werror)

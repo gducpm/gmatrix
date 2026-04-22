@@ -30,10 +30,9 @@ jobs:
     - name: Rename License for MacOS so that the CMakeLists still works
       if: runner.os == 'MacOS'
       run: cp LICENSE LICENSE.txt
-    
     - name: Configure CMake (Unix)
       if: runner.os != 'Windows'
-      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$(brew --prefix ncurses)"
 
     - name: Configure CMake (Windows)
       if: runner.os == 'Windows'
