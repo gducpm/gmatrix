@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 project(gmatrix VERSION 2.0.0 LANGUAGES C)
 
 configure_file("${PROJECT_SOURCE_DIR}/src/version.h.in" "${PROJECT_BINARY_DIR}/generated/version.h")
@@ -64,4 +64,17 @@ endif()
 
 include(CPack)
 
-install(TARGETS gmatrix DESTINATION bin)
+install(TARGETS gmatrix RUNTIME DESTINATION bin)
+
+if(WIN32)
+	install(CODE [[
+		file(GET_RUNTIME_DEPENDENCIES
+			EXECUTABLES $<TARGET_FILE:gmatrix>
+			RESOLVED_DEPENDENCIES_VAR _r_deps
+			UNRESOLVED_DEPENDENCIES_VAR _u_deps
+		)
+		foreach(_file IN LISTS _r_deps)
+			file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "${_file}")
+		endforeach()
+	]])
+endif()
