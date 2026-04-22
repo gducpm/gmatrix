@@ -7,7 +7,8 @@ We are currently looking for help with:
 
 ## Contributing Rules
 1. **GPL-Licensed**: This is a 100% libre project. No proprietary dependencies.  
-2. **Style**: We use ISO C (C11/C17) and prefer clean, readable code. Compiler flags are very strict.  
+2. **Style**: We use ISO C (C11/C17) and prefer clean, readable code. Compiler flags are very strict to enforce code quality.
+3. **Quality**: We value good code and good user experience. As I often say, "People who try bad libre software might never touch libre software again.".  
 
 ## Process  
 1. Fork this repo.  
